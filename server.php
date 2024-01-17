@@ -50,3 +50,15 @@ devo chiamare api e sovrascriverla:
 $songsArray = file_get_contents('./json/data.json');
 header('Content-Type: application/json');
 echo json_encode($songsArray);
+
+echo($songsArray);
+?>
+
+<?php { ?> 
+<ul>
+    <li>
+        <?php echo $songsArray ?>
+    </li>
+</ul>
+
+<?php } ?>

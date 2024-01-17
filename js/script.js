@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            apiUrl: '../server.php',
+            apiUrl: './server.php',
             songsArray: [],
         }
     },
@@ -11,8 +11,8 @@ createApp({
     methods: {
         getSongsArray(){
             axios.get(this.apiUrl).then((response) =>{
-                songsArray = response.data;
-
+                this.songsArray = response.data;
+                
                 console.log(response.data);
             });
         }
@@ -21,5 +21,6 @@ createApp({
     created(){
         songsArray();
     }
+
 
 }).mount('#app')
